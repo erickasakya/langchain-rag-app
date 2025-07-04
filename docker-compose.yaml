@@ -1,0 +1,10 @@
+services:
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: chromadb
+    ports:
+      - "8088:8000"
+    environment:
+      - CHROMA_DATABASE_DIR=/data
+    volumes:
+      - ./chroma_db:/data
