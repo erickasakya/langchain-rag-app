@@ -1,0 +1,8 @@
+langchain-openai
+langchain-text-splitters 
+langchain-community 
+langchain
+langgraph
+streamlit
+langchain-groq
+chromadb
