@@ -1,3 +1,11 @@
+## Steps to Run this Application
+
+1. Run `docker compose up -d `
+2. Run all the cells in `rag_pipeline.ipynb`
+3. Run strealit app `streamlit run main.py`
+4. Start chatting
+
+
 ## Steps to develop RAG
 
 1. read the data/text from the db or from a file
