@@ -12,12 +12,20 @@ if not config.get("GROQ_API_KEY"):
 
 groq_api_key = config.get("GROQ_API_KEY")
 
-
-client = chromadb.PersistentClient(path="chroma_db")
-
-collection = client.get_or_create_collection(name="demo_rag_collection")
-
 st.title("LangChain RAG with Groq AI")
+
+# client = chromadb.PersistentClient(path="chroma_db")
+
+# collection = client.get_or_create_collection(name="demo_rag_collection")
+
+client = chromadb.HttpClient(host="localhost", port=8088)
+
+if not (ret := client.heartbeat()):
+    st.error("ChromaDB server is not running. Please start the server and try again.")
+    st.stop()
+else:
+    st.success(f"ChromaDB server is running. {datetime.fromtimestamp(int(ret / 1e9))}")
+
 
 system_message = SystemMessage(
     content="You are a helpful assistant that is not too verbose. "
