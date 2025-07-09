@@ -8,3 +8,10 @@ services:
       - CHROMA_DATABASE_DIR=/data
     volumes:
       - ./chroma_db:/data
+  streamlit:
+    build:
+      context: dockerfile
+    ports:
+      - "8502:8501"
+    env_file:
+      - ./.env
