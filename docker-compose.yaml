@@ -10,7 +10,7 @@ services:
       - ./chroma_db:/data
   streamlit:
     build:
-      context: dockerfile
+      context: .
     ports:
       - "8502:8501"
     env_file:
