@@ -1,0 +1,7 @@
+.git
+.venv
+chroma_db/
+context_data/
+Readme.md
+.env
+docker-compose.yaml
