@@ -31,7 +31,11 @@ git clone https://github.com/erickasakya/langchain-rag-app.git
 
 cd langchain-rag-app
 ```
-3. Build Docker Containers
+3. Create .env from .env.template and update the api keys
+
+`mv .env.template .env`
+
+4. Build Docker Containers
 
 `docker compose up -d --build`
 
@@ -39,3 +43,11 @@ cd langchain-rag-app
 Open the browser and enter the url below.
 
 `http://localhost:8502`
+
+## Test application.
+
+1. Load the sample text document in context_data folder.
+2. After loading use the below sample prompts to test
+- Who is the writer of the book The Man Who Was Thursday: A Nightmare?
+- Which year was it realased
+- Which language
