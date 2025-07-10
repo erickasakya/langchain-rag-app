@@ -22,6 +22,7 @@ This application allows users to upload a document and ask questions against the
 1. Have the following installed on your machine.
 - [Docker](https://docs.docker.com/desktop/?_gl=1*ldm9ra*_gcl_au*MTU3NjU5NDE3MC4xNzUyMTI5Njc0*_ga*MjU0Mzc5MzUwLjE3MTg2MzM0NDQ.*_ga_XJWPQMJYHQ*czE3NTIxMjk2NzQkbzY2JGcxJHQxNzUyMTI5Njc1JGo1OSRsMCRoMA..)
 - [Docker-compose](https://docs.docker.com/compose/install/)
+- [git](https://git-scm.com/downloads)
 
 2. Clone the Repository
 
