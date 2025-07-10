@@ -1,14 +1,7 @@
-FROM python:3.13-alpine
+FROM python:3.13-slim
 WORKDIR /app
 
-RUN apk add --no-cache \
-    rust \
-    cargo \
-    build-base \
-    musl-dev \
-    python3-dev \
-    libffi-dev \
-    openssl-dev
+RUN apt-get update && apt-get install -y --no-install-recommends git
 
 COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
