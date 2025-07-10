@@ -23,16 +23,17 @@ groq_api_key = config.get("GROQ_API_KEY")
 
 st.title("LangChain RAG with Groq AI")
 
-
-client = chromadb.HttpClient(host="localhost", port=8088)
-
-if not (ret := client.heartbeat()):
-    st.error("ChromaDB server is not running. Please start the server and try again.")
-    st.stop()
-else:
+try:
+    client = chromadb.HttpClient(
+        host=config["CHROMADB_HOST"], port=config["CHROMADB_PORT"]
+    )
+    ret = client.heartbeat()
     st.success(
         f"The system is up and running. {datetime.fromtimestamp(int(ret / 1e9))}"
     )
+except Exception as e:
+    st.error("ChromaDB server is not running. Please start the server and try again.")
+    st.stop()
 
 
 system_message = SystemMessage(

@@ -5,3 +5,5 @@ context_data/
 Readme.md
 .env
 docker-compose.yaml
+.gitignore
+.DS_Store
